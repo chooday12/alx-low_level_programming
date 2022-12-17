@@ -1,18 +1,25 @@
 #include "main.h"
 
 /**
- * print_most_numbers - prints line n times
- *
- * @n: times straight line is printed
- * Return: no return
+ * print_line - prints a straight line in the terminal
+ * @n: print int
+ * Return: Always 0
  */
 void print_line(int n)
 {
 	int i;
 
-	for(i = 0; i < n; i++)
+	if (n > 0)
 	{
-		 _putchar(95);
+		for (i = 0; i < n; i++)
+		{
+			_putchar (95);
+		}
+
+		_putchar ('\n')
 	}
-	_putchar('\n');
+	else
+	{
+		_putcahr('\n')
+	}
 }
