@@ -20,6 +20,6 @@ void print_line(int n)
 	}
 	else
 	{
-		_putcahr('\n')
+		_putchar('\n')
 	}
 }
