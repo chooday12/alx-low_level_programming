@@ -12,11 +12,11 @@ char *_strstr(char *haystack, char *needle)
 
 	while (*haystack != '\0')
 	{
-		str1 = haystack; /*value*/
+		str1 = haystack; /*values*/
 		str2 = needle;
 
 		/*star WHILE*/
-		while (*haystack != '\0' && *str2 != '\0' && haystack == *str2)
+		while (*haystack != '\0' && *str2 != '\0' && *haystack == *str2)
 		{
 			haysatck++;
 			str2++;
