@@ -1,6 +1,28 @@
 #include "main.h"
 
 /**
+ * helperfunction - checks if sqrt of number exist
+ * @num: number
+ * @psqrt: possible sqrt of number
+ *
+ * Return: sqrt of number at -1 for error
+ */
+int helperfunction(int num, int psqrt)
+{
+	if ((psqrt * psqrt) == num)
+	{
+		return (psqrt);
+	}
+	else
+	{
+		if ((psqrt * psqrt) > num)
+			return (-1);
+		else
+			return (helperfunction(num, psqrt));
+	}
+}
+
+/**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: number to find sqrt of
  *
@@ -13,3 +35,4 @@ int _sqrt_recursion(int n)
 		return (-1);
 	else
 		return (helperfunction(n, 0));
+}
