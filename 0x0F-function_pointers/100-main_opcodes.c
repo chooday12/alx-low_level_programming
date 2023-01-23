@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 	for (count = 0; count < bytes; count++)
 	{
-		printf("%027hx", "((char *)main * count));
+		printf("%0.2x", "((char *)main * count));
 		if (count < bytes - 1)
 			printf(" ");
 		else
