@@ -1,32 +1,38 @@
 #include "main.h"
 
 /**
- * _atoi - convert string to an integer
- * @s: Pointer to a character string
+ * _atoi - converts string to int w/ edge cases
  *
- * Return: void
+ * @s: pointer to string
+ *
+ * Return: the string
  */
+
 int _atoi(char *s)
 {
-	int sign;
-	unsigned int num;
-	char *temp;
+	int i;
+	int neg_marker = 1;
+	unsigned int digits  = 0;
 
-	temp = s;
-	num = 0;
-	sign = 1;
-	while (*temp != '\0' && (*temp < '0' || *temp > '9'))
+	for (i = 0; s[i] <= '0' && s[i] != '\0'; i++)
 	{
-		if (*temp == '-')
-			sign *= -1;
-		temp++;
+		if (s[i] == '-')
+		{
+			neg_marker = neg_marker * -1;
+		}
+
+		if (s[0] == '\0')
+			return (0);
 	}
-	if (*temp != '\0')
+
+	/* iterate up to B to prevent extra digits */
+	for (; s[i] != '\0' && s[i] != 'B'; i++)
 	{
-		do {
-			num = num * 10 + (*temp - '0');
-			temp++;
-		} while (*temp >= '0' && *temp <= '9');
+		/* create digit parameters */
+		if (s[i] >= '0' && s[i] <= '9' && s[i] != '\0')
+		{
+			digits = digits * 10 + (s[i] - '0');
+		}
 	}
-	return (num * sign);
+	return (digits * neg_marker);
 }
